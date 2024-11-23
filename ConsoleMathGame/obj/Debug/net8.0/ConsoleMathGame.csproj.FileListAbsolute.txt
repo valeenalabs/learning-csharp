@@ -1,0 +1,14 @@
+D:\PROJECTS\active\ConsoleMathGame\bin\Debug\net8.0\ConsoleMathGame.exe
+D:\PROJECTS\active\ConsoleMathGame\bin\Debug\net8.0\ConsoleMathGame.deps.json
+D:\PROJECTS\active\ConsoleMathGame\bin\Debug\net8.0\ConsoleMathGame.runtimeconfig.json
+D:\PROJECTS\active\ConsoleMathGame\bin\Debug\net8.0\ConsoleMathGame.dll
+D:\PROJECTS\active\ConsoleMathGame\bin\Debug\net8.0\ConsoleMathGame.pdb
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.AssemblyInfoInputs.cache
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.AssemblyInfo.cs
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.csproj.CoreCompileInputs.cache
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.dll
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\refint\ConsoleMathGame.dll
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.pdb
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ConsoleMathGame.genruntimeconfig.cache
+D:\PROJECTS\active\ConsoleMathGame\obj\Debug\net8.0\ref\ConsoleMathGame.dll
