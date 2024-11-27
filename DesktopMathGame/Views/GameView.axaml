@@ -1,0 +1,60 @@
+﻿<UserControl
+    Height="300"
+    Width="400"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="DesktopMathGame.Views.GameView"
+    x:DataType="vm:GameViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:DesktopMathGame.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="20" RowDefinitions="Auto,Auto,Auto,Auto,*">
+        <!--  Problem Display  -->
+        <StackPanel
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal"
+            Spacing="10">
+            <TextBlock FontSize="24" Text="{Binding Equation}" />
+        </StackPanel>
+
+        <!--  Answer Input  -->
+        <TextBox
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            Margin="0,20"
+            Text="{Binding UserAnswer}"
+            Width="100" />
+
+        <!--  Buttons  -->
+        <StackPanel
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal"
+            Spacing="10">
+            <!--  Check Answer Button  -->
+            <Button Command="{Binding CheckAnswerCommand}" Content="Check Answer" />
+            <!--  New Problem Button  -->
+            <Button
+                Command="{Binding GenerateNewProblemCommand}"
+                CommandParameter="{Binding GameType}"
+                Content="New Problem" />
+            <!--  Navigate Home Button  -->
+            <Button Command="{Binding NavigateHomeCommand}" Content="Navigate Home" />
+        </StackPanel>
+
+        <!--  Feedback Message  -->
+        <TextBlock
+            FontSize="16"
+            Foreground="{Binding FeedbackColor}"
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            Margin="0,20"
+            Text="{Binding FeedbackMessage}" />
+
+    </Grid>
+</UserControl>

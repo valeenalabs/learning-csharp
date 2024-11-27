@@ -1,0 +1,58 @@
+<Window
+    Icon="/Assets/avalonia-logo.ico"
+    Title="DesktopMathGame"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="DesktopMathGame.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:DesktopMathGame.Models"
+    xmlns:views="using:DesktopMathGame.Views"
+    xmlns:vm="clr-namespace:DesktopMathGame.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+        <!--  This ContentControl will show either our menu or the game  -->
+        <ContentControl Content="{Binding CurrentView}">
+            <!--  The content here changes based on CurrentView  -->
+        </ContentControl>
+
+        <!--  This only shows when CurrentView is MainWindowViewModel  -->
+        <StackPanel IsVisible="{Binding CurrentView, Converter={x:Static ObjectConverters.IsNull}}">
+            <TextBlock
+                FontSize="24"
+                HorizontalAlignment="Center"
+                Margin="0,20"
+                Text="Welcome to Valeena's Math Game!" />
+            <!--  Buttons  -->
+            <Button
+                Command="{Binding StartNewGameCommand}"
+                CommandParameter="{x:Static models:GameTypeEnum.Addition}"
+                Content="New Addition Problem"
+                FontSize="16"
+                HorizontalAlignment="Center" />
+            <Button
+                Command="{Binding StartNewGameCommand}"
+                CommandParameter="{x:Static models:GameTypeEnum.Subtraction}"
+                Content="New Subtraction Problem"
+                FontSize="16"
+                HorizontalAlignment="Center" />
+            <Button
+                Command="{Binding StartNewGameCommand}"
+                CommandParameter="{x:Static models:GameTypeEnum.Multiplication}"
+                Content="New Multiplication Problem"
+                FontSize="16"
+                HorizontalAlignment="Center" />
+            <Button
+                Command="{Binding StartNewGameCommand}"
+                CommandParameter="{x:Static models:GameTypeEnum.Division}"
+                Content="New Division Command"
+                FontSize="16"
+                HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+
+</Window>
