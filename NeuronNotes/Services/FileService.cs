@@ -5,17 +5,21 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using NeuronNotes.Models;
 using NeuronNotes.Services.Interface;
+using Serilog;
 
 namespace NeuronNotes.Services;
 
 public class FileService : IFileService
 {
+    private readonly ILogger _logger;
+    
     private readonly string _basePath = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
         "NeuronNotes");
 
-    public FileService()
+    public FileService(ILogger logger)
     {
+        _logger = logger;
         Directory.CreateDirectory(_basePath);
     }
 

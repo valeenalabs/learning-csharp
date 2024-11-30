@@ -10,6 +10,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using NeuronNotes.Models;
 using NeuronNotes.Services;
+using Serilog;
 
 namespace NeuronNotes.ViewModels;
 
@@ -23,9 +24,11 @@ public partial class MainWindowViewModel : ViewModelBase
     
     private readonly IMessenger _messenger;
     private readonly INoteService _noteService;
+    private readonly ILogger _logger;
 
-    public MainWindowViewModel(INoteService noteService, IMessenger messenger) 
+    public MainWindowViewModel(INoteService noteService, IMessenger messenger, ILogger logger) 
     {
+        _logger = logger;
         _noteService = noteService;
         _messenger = messenger;
         DisplayNotes = new ObservableCollection<Note>(noteService.GetAllNotes().Values);
