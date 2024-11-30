@@ -3,7 +3,12 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="App.axaml" value="NeuronNotes.csproj" />
         <entry key="Views/MainWindow.axaml" value="NeuronNotes.csproj" />
+        <entry key="Views/MainWindowView.axaml" value="NeuronNotes.csproj" />
+        <entry key="Views/NoteView.axaml" value="NeuronNotes.csproj" />
+        <entry key="Views/NotesListView.axaml" value="NeuronNotes.csproj" />
+        <entry key="Views/SidebarView.axaml" value="NeuronNotes.csproj" />
       </map>
     </option>
   </component>

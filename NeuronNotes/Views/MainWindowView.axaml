@@ -1,0 +1,57 @@
+<Window
+    Icon="/Assets/avalonia-logo.ico"
+    Title="NeuronNotes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="NeuronNotes.Views.MainWindowView"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:NeuronNotes.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Beginning of the UI  -->
+    <Grid ColumnDefinitions="60,150,*">
+        <!--  Sidebar menu  -->
+        <StackPanel
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            Width="60"
+            x:Name="Sidebar">
+            <Button
+                Command="{Binding CreateNoteCommand}"
+                HorizontalAlignment="Center"
+                HotKey="Ctrl+N">
+                New
+            </Button>
+            <Button HorizontalAlignment="Center" HotKey="Ctrl+S">Save</Button>
+            <Button HorizontalAlignment="Center">Delete</Button>
+        </StackPanel>
+        <!--  Column with the list of notes  -->
+        <StackPanel Grid.Column="1">
+            <TextBox Watermark="Search notes..." />
+            <ListBox
+                ItemsSource="{Binding DisplayNotes}"
+                SelectedItem="{Binding SelectedNote}"
+                SelectionMode="Single">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <!--  Actual Note display UI  -->
+        <StackPanel Grid.Column="2">
+            <TextBox Text="{Binding ActiveNote.Title}" Watermark="Note Title" />
+            <TextBox
+                AcceptsReturn="True"
+                Height="500"
+                Text="{Binding ActiveNote.Content}"
+                Watermark="Note Content" />
+        </StackPanel>
+    </Grid>
+
+</Window>
